@@ -1,4 +1,5 @@
 import { generateUUID } from "../shared/component_utilities.js";
+import { Context, WidgetContextEntry } from "./context.js";
 
 export class Widget {
     constructor(template = (self, body) => {}, onDestroy = (self,body) => {}) {
@@ -29,12 +30,18 @@ export class Widget {
     } 
 
     build(){
+        const context = new Context();
+
         const body = this.data.body;
         const template = this.data.template;
 
         if(template){
             template(this,body);
         }
+
+        const context_id = generateUUID();
+        body.setAttribute("data-context_id",context_id);
+        context.addWidgetContextEntries(new WidgetContextEntry(this.data.id,context_id,this));
 
         return body;
     }
