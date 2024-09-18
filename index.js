@@ -40,23 +40,23 @@ const widget_3 = new Widget((self,body)=>{
     body.appendChild(btn);
 
 
-    const window = Col();
+    // const window = Col();
 
-    const widgetSelector =  new WidgetSelector([
-        new WidgetSelection("Widget 1",widget_1),
-        new WidgetSelection("Widget 2",widget_2),
-    ], null, (e,selection)=>{
-        const widget = selection.getWidget()
-        window.innerHTML = "";
-        window.appendChild(widget.build())
-    });
+    // const widgetSelector =  new WidgetSelector([
+    //     new WidgetSelection("Widget 1",widget_1),
+    //     new WidgetSelection("Widget 2",widget_2),
+    // ], null, (e,selection)=>{
+    //     const widget = selection.getWidget()
+    //     window.innerHTML = "";
+    //     window.appendChild(widget.build())
+    // });
 
-    const selections = widgetSelector.build();
+    // const selections = widgetSelector.build();
 
-    const tabs = Row(selections)
+    // const tabs = Row(selections)
     
-    body.appendChild(tabs)
-    body.appendChild(window)
+    // body.appendChild(tabs)
+    // body.appendChild(window)
 
     const msg = getIntent("msg");
 

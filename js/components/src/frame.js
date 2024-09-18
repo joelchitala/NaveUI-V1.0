@@ -1,5 +1,6 @@
 import { generateUUID } from "../shared/component_utilities.js";
 import { EventManager } from "./event_manager.js";
+import { observer } from "./observer.js";
 
 export class Frame {
     constructor() {
@@ -14,6 +15,8 @@ export class Frame {
 
         if(!Frame.instance){
             Frame.instance = this;
+
+            
         }
 
         return Frame.instance;
@@ -21,6 +24,12 @@ export class Frame {
 
     setParentElement(parentElement){
         this.data.parentElement = parentElement;
+
+        observer.disconnect();
+
+        const config = { childList: true, subtree: true };
+
+        observer.observe(parentElement, config);
     }
 
     getParentElement = () => this.data.parentElement

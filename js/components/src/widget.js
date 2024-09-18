@@ -8,6 +8,8 @@ export class Widget {
             "template":template,
             "onDestroy":onDestroy,
         }
+
+        this.data.body.setAttribute("data-widget_id",this.data.id);
     }
 
     getId = () => this.data.id;
