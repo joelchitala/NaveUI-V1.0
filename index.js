@@ -1,7 +1,7 @@
-import { runApp } from "./js/components/src/main.js";
-import { createIntent, getIntent, navigatorPop, navigatorPush } from "./js/components/src/ui_helpers.js";
-import { Widget } from "./js/components/src/widget.js";
-import { Col, Row, WidgetSelection, WidgetSelector } from "./js/custom/custom_components.js";
+import { runApp } from "./naveui-v1.0/js/components/src/main.js";
+import { createIntent, getIntent, navigatorPop, navigatorPush } from "./naveui-v1.0/js/components/src/ui_helpers.js";
+import { Widget } from "./naveui-v1.0/js/components/src/widget.js";
+import { Col, Row, WidgetSelection, WidgetSelector } from "./naveui-v1.0/js/custom/custom_components.js";
 
 const main = document.querySelector('main');
 
